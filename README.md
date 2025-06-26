@@ -1,2 +1,16 @@
 # gocut
-gocut is a slimming tool for Go plugins. It extracts only the used functions, variables, and types from an entry file, producing a minimal buildable source set with reduced size. gocut 是一个用于 Go 插件项目的瘦身工具，从入口文件出发，仅提取实际使用到的函数、变量和类型，生成最小可编译源码，显著减少构建体积。
+
+gocut is a source-level minimizer for Go plugin projects. It analyzes a given entry .go file and recursively extracts only the functions, variables, and types that are actually used, generating a minimal, buildable subset of source files.
+
+This tool is designed to trim down Go plugin projects, remove unused code, and significantly reduce build size—especially useful for dynamic plugin systems or runtime-loaded modules.
+
+## ✨ Features:
+🚀 Starts from a single Go file and tracks all used symbols across the package
+
+📦 Recursively includes struct fields, init expressions, and type references
+
+🧠 Ignores unused declarations and unreachable code
+
+📁 Outputs a minimized source directory directly compilable as a Go plugin
+
+🔧 Compatible with goimports to autofix missing import statements
